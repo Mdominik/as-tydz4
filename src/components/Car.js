@@ -1,22 +1,3 @@
-// import React from 'react';
-
-// export default class Car extends React.Component {
-
-//     render() {
-//         return (
-            
-//             <div>
-//                 <p>------------</p>
-//                 <p>{this.props.info.id}</p>
-//                 <p>{this.props.info.mark}</p>
-//                 <p>{this.props.info.model}</p>
-//                 <p>{this.props.info.color}</p>
-//             </div>
-//         )
-
-//     }
-
-// }
 
 import React, { Component } from 'react';
 
@@ -25,6 +6,7 @@ class Car extends Component {
     constructor(props) {
         super(props)
 
+        const url = "https://as-tydz3-backend.herokuapp.com/"
         this.state = {
             id:this.props.info.id,
             mark:this.props.info.mark,

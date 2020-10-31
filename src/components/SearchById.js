@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class SearchById extends Component {
     
     constructor(props) {
+        
+        const url = "https://as-tydz3-backend.herokuapp.com/"
         super(props)
 
         this.state = {
@@ -13,7 +15,7 @@ class SearchById extends Component {
 
     handleChangeSearch = event => {
         if (event.target.value != "") {
-            fetch("http://localhost:8081/cars/"+event.target.value)
+            fetch(this.url+"cars/"+event.target.value)
             .then(response => {
                 if (response.ok) {
                   return response.json()

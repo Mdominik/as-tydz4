@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class CarsForm extends Component {
-
     constructor(props) {
+        const url = "https://as-tydz3-backend.herokuapp.com/"
         super(props)
         this.state = {
             colors: [],
@@ -52,7 +52,7 @@ class CarsForm extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        fetch('http://localhost:8081/cars', requestOptions)
+        fetch(this.url+"cars", requestOptions)
         .then((res) => res.json())
         .then((data) => console.log(data))
         .catch((err) => console.log(err))
@@ -62,7 +62,7 @@ class CarsForm extends Component {
 
     componentDidMount() {
 
-        fetch("http://localhost:8081/cars/color-values")
+        fetch(this.url+"cars/color-values")
         .then(response => response.json())
         .then(colors => {
                 console.log(colors)
