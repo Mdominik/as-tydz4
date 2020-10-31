@@ -6,7 +6,6 @@ export default class FetchCars extends React.Component {
     constructor(props) {
         super(props)
 
-        const url = "https://as-tydz3-backend.herokuapp.com/"
         this.state = {
             searchedCar: null,
             cars: []
@@ -16,7 +15,7 @@ export default class FetchCars extends React.Component {
 
 
     componentDidMount() {
-        fetch(this.url+"cars/all", {headers: { 'Content-Type': 'application/json' }})
+        fetch("https://as-tydz3-backend.herokuapp.com/cars/all", {headers: { 'Content-Type': 'application/json' }})
         .then(response => response.json())
         .then(cars => {
                 console.log(cars)

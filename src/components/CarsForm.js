@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class CarsForm extends Component {
     constructor(props) {
-        const url = "https://as-tydz3-backend.herokuapp.com/"
         super(props)
         this.state = {
             colors: [],
@@ -52,7 +51,7 @@ class CarsForm extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        fetch(this.url+"cars", requestOptions)
+        fetch("https://as-tydz3-backend.herokuapp.com/cars", requestOptions)
         .then((res) => res.json())
         .then((data) => console.log(data))
         .catch((err) => console.log(err))
@@ -62,7 +61,7 @@ class CarsForm extends Component {
 
     componentDidMount() {
 
-        fetch(this.url+"cars/color-values", {headers: { 'Content-Type': 'application/json' }})
+        fetch("https://as-tydz3-backend.herokuapp.com/cars/color-values", {headers: { 'Content-Type': 'application/json' }})
         .then(response => response.json())
         .then(colors => {
                 console.log(colors)

@@ -6,7 +6,6 @@ class Car extends Component {
     constructor(props) {
         super(props)
 
-        const url = "https://as-tydz3-backend.herokuapp.com/"
         this.state = {
             id:this.props.info.id,
             mark:this.props.info.mark,
@@ -53,7 +52,7 @@ class Car extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(changedData)
         };
-        fetch("http://localhost:8081/cars", requestOptions)
+        fetch("https://as-tydz3-backend.herokuapp.com/cars", requestOptions)
         .then(response => response.json())
         .then((data) => console.log(data))
         alert('A car was edited: ' + this.state.model);
@@ -64,7 +63,7 @@ class Car extends Component {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' }
         };
-        fetch(('http://localhost:8081/cars/'+this.state.id), requestOptions)
+        fetch(('https://as-tydz3-backend.herokuapp.com/cars/'+this.state.id), requestOptions)
         .then((res) => res.json())
         .catch((err) => console.log(err))
         window.location.reload(false);

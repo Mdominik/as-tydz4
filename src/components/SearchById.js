@@ -4,7 +4,6 @@ class SearchById extends Component {
     
     constructor(props) {
         
-        const url = "https://as-tydz3-backend.herokuapp.com/"
         super(props)
 
         this.state = {
@@ -15,7 +14,7 @@ class SearchById extends Component {
 
     handleChangeSearch = event => {
         if (event.target.value != "") {
-            fetch(this.url+"cars/"+event.target.value, {headers: { 'Content-Type': 'application/json' }})
+            fetch("https://as-tydz3-backend.herokuapp.com/cars/"+event.target.value, {headers: { 'Content-Type': 'application/json' }})
             .then(response => {
                 if (response.ok) {
                   return response.json()
