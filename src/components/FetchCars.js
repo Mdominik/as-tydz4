@@ -16,7 +16,7 @@ export default class FetchCars extends React.Component {
 
 
     componentDidMount() {
-        fetch(this.url+"cars/all")
+        fetch(this.url+"cars/all", {headers: { 'Content-Type': 'application/json' }})
         .then(response => response.json())
         .then(cars => {
                 console.log(cars)

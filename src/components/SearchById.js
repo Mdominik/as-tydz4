@@ -15,7 +15,7 @@ class SearchById extends Component {
 
     handleChangeSearch = event => {
         if (event.target.value != "") {
-            fetch(this.url+"cars/"+event.target.value)
+            fetch(this.url+"cars/"+event.target.value, {headers: { 'Content-Type': 'application/json' }})
             .then(response => {
                 if (response.ok) {
                   return response.json()

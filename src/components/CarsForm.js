@@ -62,7 +62,7 @@ class CarsForm extends Component {
 
     componentDidMount() {
 
-        fetch(this.url+"cars/color-values")
+        fetch(this.url+"cars/color-values", {headers: { 'Content-Type': 'application/json' }})
         .then(response => response.json())
         .then(colors => {
                 console.log(colors)
